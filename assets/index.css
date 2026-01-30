@@ -6,5 +6,99 @@ body{
 header{
     background: black;
     display: flex;
+    flex-direction: row;
     height: 70px;
+    border-bottom: 1px solid #343333;
+}
+
+nav{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    height: 50px;
+    width: auto;
+}  
+.logo h1{
+    color: white;
+    margin-left: 10px;
+    font-size: 24px;
+} 
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin-left: 30px;
+}
+
+nav ul li a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: ease-in-out 0.3s;
+    overflow: hidden !important;
+    z-index: 0;
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FFB400;
+    z-index: -1;
+    transition: ease-in-out 0.3s;
+    border-radius: 4px;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+
+nav ul li a.active{
+    background-color: #FFB400;
+}
+
+main{
+    position: relative;
+    display: flex;
+    height: calc(100vh - 100px);
+    padding: 20px;
+    background-color: #111111;
+    z-index: 0;
+    overflow: hidden;
+}
+
+main::before{
+    content: ' ';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    transform: rotate(-15deg);
+    left: -83%;
+    top: -50%;
+    background-color: #FFB400;
+    z-index: -1;
 }
