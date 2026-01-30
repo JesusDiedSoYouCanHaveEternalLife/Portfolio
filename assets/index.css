@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 header{
@@ -84,6 +84,8 @@ nav ul li a.active{
 main{
     position: relative;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: calc(100vh - 100px);
     padding: 20px;
     background-color: #111111;
@@ -101,4 +103,84 @@ main::before{
     top: -50%;
     background-color: #FFB400;
     z-index: -1;
+}
+
+.profile-photo {
+    margin-top: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    background-color: black;
+    border-radius:20px;
+    width: 500px;
+    height: calc(100vh - 170px);
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.intro{
+    color: white;
+    display: flex;
+    max-width: 50%;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    height: calc(100vh - 170px);
+    padding: 0 50px;
+}
+
+.intro h2{
+    font-size: 51px;
+    font-weight: 700;
+    color:#FFB400;
+    margin: 0px;
+    text-transform: uppercase;
+    line-height: 62px;
+}
+
+.intro h3{
+    font-size: 51px;
+    font-weight: 700;
+    line-height: 62px;
+    color: white;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.intro p{
+    font-size: 18px;
+    color: white;
+    margin-top: 30px;
+    line-height: 35px;
+}
+
+.p-button {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 35px;
+    border: 2px solid #FFB400;
+    transition: background-color 0.3s ease;
+}
+
+.p-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    background-color: #FFB400;
+    border-radius: 35px;
+    z-index: -1;
+    transition: all ease-in-out 0.3s;
+}
+
+.p-button:hover::before {
+    width: 100%;
+    opacity: 1;
 }
