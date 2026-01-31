@@ -232,7 +232,13 @@ main.custom-page::before{
     border-radius: 10px;
     margin-bottom: 20px;
     overflow: hidden;
+    border: 1px solid #343333;
+    cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all ease-in-out 0.3s;
+}
+.project:hover {
+    box-shadow: 0 0 20px rgba(255, 180, 0, 0.7);
 }
 
 .project-image img {
@@ -242,23 +248,23 @@ main.custom-page::before{
 
 .project-info {
     padding: 20px;
-    background-color: #FFB400;
+    background-color: #343333;
     flex: 1;
 }
 
 .project-title {
     font-size: 24px;
     margin: 0 0 10px 0;
-    color: black;
+    color: #FFB400;
 }
 .project-description {
     font-size: 16px;
-    color: black;
+    color: white;
 }
 
 .body{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
 }
