@@ -268,3 +268,27 @@ main.custom-page::before{
     gap: 40px;
     justify-content: center;
 }
+
+.contact-left, .contact-right{
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #343333;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: black;
+}
