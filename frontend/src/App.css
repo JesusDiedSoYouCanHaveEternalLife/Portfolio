@@ -2,7 +2,7 @@ body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
-
+/* Global styles */
 #root{
     width: 100%;
 }
@@ -14,7 +14,7 @@ header{
     height: 70px;
     border-bottom: 1px solid #343333;
 }
-
+/* Navigation styles */
 nav{
     display: flex;
     flex: 1;
@@ -23,6 +23,7 @@ nav{
     padding: 0 20px;
 }
 
+/* Logo styles */
 .logo{
     display: flex;
     align-items: center;
@@ -101,6 +102,7 @@ main{
     overflow: hidden;
 }
 
+/* Diagonal background effect */
 main::before{
     content: ' ';
     position: absolute;
@@ -113,6 +115,7 @@ main::before{
     z-index: -1;
 }
 
+/* Custom page styles */
 main.custom-page{
     flex-direction: column;
     padding: 50px 100px;
@@ -171,6 +174,7 @@ main.custom-page::before{
     line-height: 35px;
 }
 
+/* Button styles */
 .p-button {
     position: relative;
     display: inline-block;
@@ -213,6 +217,7 @@ main.custom-page::before{
     align-items: center;
 }
 
+/* Heading styles - Faded back text */
 .heading-back {
     position: absolute;
     font-size: 110px;
@@ -224,6 +229,7 @@ main.custom-page::before{
     z-index: -1;
 }
 
+/* Heading styles - Front text */
 .heading-txt {
     font-size: 56px;
     font-weight: 900;

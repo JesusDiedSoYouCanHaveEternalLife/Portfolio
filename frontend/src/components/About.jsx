@@ -2,6 +2,8 @@ import Layout from "./Layout";
 import profile from '../assets/profile_real.png';
 import resume from '../assets/resume.pdf';
 
+//Component for the About page
+//A Layout component is used to wrap the content of the page and provide a consistent layout across all pages.
 function AboutComponent({page}) {
     return ( 
     <Layout page={page}>

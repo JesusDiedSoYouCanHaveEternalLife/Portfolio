@@ -1,3 +1,9 @@
+/**
+ * Project Name: Portfolio
+ * Description: A project displaying my skills and experience
+ * Author: Andrelle Thompson
+ * ID: 301519338
+ */
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import IndexComponent from './components/Index';
 import AboutComponent from './components/About';
@@ -15,7 +21,8 @@ import webdev from './assets/webdev.jpg';
 import softdev from './assets/softdev.jpg';
 
 function MainRouter() {
-    const items  = [
+    //Data list for projects
+    const projects  = [
         {
             image: proj1,
             title: 'Eco Landscaping JA',
@@ -47,6 +54,7 @@ function MainRouter() {
             description: 'Beauty products website developed for a client.'
         }
     ];
+    //Data list for services
     const services = [
         {
             image: webdev,
@@ -69,7 +77,7 @@ function MainRouter() {
         <Route path='/' element={<IndexComponent page={"home"} />} />
         <Route path='/about' element={<AboutComponent page="about" />} />
         <Route path='/contact' element={<ContactComponent page="contact" />} />
-        <Route path='/projects' element={<ProjectsComponent page="projects" items={items} />} />
+        <Route path='/projects' element={<ProjectsComponent page="projects" items={projects} />} />
         <Route path='/services' element={<ServicesComponent page="services" items={services} />} />
     </Routes> );
 }

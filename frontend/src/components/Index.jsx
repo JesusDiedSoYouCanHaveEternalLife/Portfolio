@@ -2,6 +2,8 @@ import Layout from "./Layout";
 import profile from '../assets/profile.png';
 import { Link } from "react-router-dom";
 
+//Component for the Index page
+//A Layout component is used to wrap the content of the page and provide a consistent layout across all pages.
 function IndexComponent({page}) {
     return ( 
     <Layout page={page}>

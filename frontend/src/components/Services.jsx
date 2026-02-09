@@ -1,5 +1,7 @@
 import Layout from "./Layout";
 
+//Component for the Services page
+//A Layout component is used to wrap the content of the page and provide a consistent layout across all pages.
 function ServicesComponent({items, page}) {
     return ( 
     <Layout page={page}>

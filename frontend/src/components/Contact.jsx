@@ -1,5 +1,7 @@
 import Layout from "./Layout";
 
+//Component for the Contact page
+//A Layout component is used to wrap the content of the page and provide a consistent layout across all pages.
 function ContactComponent({page}) {
     return ( 
     <Layout page={page}>

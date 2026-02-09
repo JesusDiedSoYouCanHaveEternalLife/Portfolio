@@ -1,6 +1,9 @@
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
+//Component for the Layout of the pages
+//This component is used to wrap the content of the rest of the pages and provide a consistent layout across all pages.
+//The header links to the rest of pages and is consistent across all pages. The children prop is used to render the content of the rest of the pages.
 function Layout({page, children}) {
     return ( 
     <>
