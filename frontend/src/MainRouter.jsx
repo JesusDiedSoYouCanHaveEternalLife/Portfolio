@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import IndexComponent from './components/Index';
 import AboutComponent from './components/About';
 import ContactComponent from './components/Contact';
-import ProjectsComponent from './components/projects';
+import ProjectsComponent from './components/Projects';
 import ServicesComponent from './components/Services';
 import proj1 from './assets/proj1.png';
 import proj2 from './assets/proj2.png';
