@@ -2,9 +2,9 @@ import Layout from "./Layout";
 import logo from '../assets/logo.webp';
 import profile from '../assets/profile_real.png';
 
-function AboutComponent() {
+function AboutComponent({page}) {
     return ( 
-    <Layout>
+    <Layout page={page}>
         <main>
 		<div className="profile-photo">
             <img src={profile} alt="Profile Photo" />

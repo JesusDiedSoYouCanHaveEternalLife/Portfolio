@@ -1,8 +1,8 @@
 import Layout from "./Layout";
 
-function ProjectsComponent({items}) {
+function ProjectsComponent({items, page}) {
     return ( 
-    <Layout>
+    <Layout page={page}>
     <main className="custom-page">
 		<div className="heading">
             <h2 className="heading-back">Projects</h2>

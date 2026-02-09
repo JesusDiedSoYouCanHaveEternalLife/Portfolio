@@ -2,9 +2,9 @@ import Layout from "./Layout";
 import logo from '../assets/logo.webp';
 import profile from '../assets/profile_real.png';
 
-function ContactComponent() {
+function ContactComponent({page}) {
     return ( 
-    <Layout>
+    <Layout page={page}>
     <main className="custom-page">
 		<div className="heading">
             <h2 className="heading-back">Contact</h2>
