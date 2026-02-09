@@ -1,5 +1,5 @@
-import logo from '../assets/logo.webp';
-import profile from '../assets/profile.png';
+import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Layout({page, children}) {
     return ( 
@@ -11,11 +11,11 @@ function Layout({page, children}) {
                 <h1>Mr. Thompson</h1>
             </div>
             <ul>
-                <li><a className={page === 'home' ? 'active' : ''} href="index.html">Home</a></li>
-                <li><a className={page === 'about' ? 'active' : ''} href="about.html">About Me</a></li>
-                <li><a className={page === 'projects' ? 'active' : ''} href="projects.html">Projects</a></li>
-                <li><a className={page === 'services' ? 'active' : ''} href="services.html">Services</a></li>
-                <li><a className={page === 'contact' ? 'active' : ''} href="contact.html">Contact</a></li>
+                <li><Link className={page === 'home' ? 'active' : ''} to="/">Home</Link></li>
+                <li><Link className={page === 'about' ? 'active' : ''} to="/about">About Me</Link></li>
+                <li><Link className={page === 'projects' ? 'active' : ''} to="/projects">Projects</Link></li>
+                <li><Link className={page === 'services' ? 'active' : ''} to="/services">Services</Link></li>
+                <li><Link className={page === 'contact' ? 'active' : ''} to="/contact">Contact</Link></li>
             </ul>
         </nav>
 	</header>

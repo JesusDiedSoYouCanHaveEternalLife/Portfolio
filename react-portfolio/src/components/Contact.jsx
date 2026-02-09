@@ -1,6 +1,4 @@
 import Layout from "./Layout";
-import logo from '../assets/logo.webp';
-import profile from '../assets/profile_real.png';
 
 function ContactComponent({page}) {
     return ( 
@@ -14,7 +12,10 @@ function ContactComponent({page}) {
             <div className="contact-left">
                 <h2>Contact Information</h2>
                 <p>If you have any questions or would like to discuss a project, feel free to reach out to me using the contact information below or by filling out the contact form.
-                    <br/>Or contact me at: andrellekthompson@gmail.com
+                    <br/>Or contact me at:
+                    <br/><b>Email:</b> <a href="mailto:andrellekthompson@gmail.com">andrellekthompson@gmail.com</a>
+                    <br/><b>Phone:</b> <a href="tel:+16479048691">+1 (647) 904-8691</a>
+                    
                 </p>
             </div>
             <div className="contact-right">
