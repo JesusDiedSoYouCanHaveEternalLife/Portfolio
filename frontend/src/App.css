@@ -95,7 +95,7 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: calc(100vh - 100px);
+    height: calc(100vh);
     padding: 20px;
     background-color: #111111;
     z-index: 0;
@@ -119,7 +119,9 @@ main::before{
 main.custom-page{
     flex-direction: column;
     padding: 50px 100px;
+    min-height: calc(100vh - 70px);
     height: auto;
+    justify-content: flex-start;
     flex: 1;
 }
 

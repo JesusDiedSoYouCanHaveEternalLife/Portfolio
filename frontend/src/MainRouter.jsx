@@ -10,6 +10,9 @@ import AboutComponent from './components/About';
 import ContactComponent from './components/Contact';
 import ProjectsComponent from './components/Projects';
 import ServicesComponent from './components/Services';
+import ListProject from './components/projects/ListProject';
+import AddProject from './components/projects/AddProject';
+import EditProject from './components/projects/EditProject';
 import proj1 from './assets/proj1.png';
 import proj2 from './assets/proj2.png';
 import proj3 from './assets/proj3.png';
@@ -78,6 +81,11 @@ function MainRouter() {
         <Route path='/about' element={<AboutComponent page="about" />} />
         <Route path='/contact' element={<ContactComponent page="contact" />} />
         <Route path='/projects' element={<ProjectsComponent page="projects" items={projects} />} />
+
+        <Route exact path="/projects/list" element={<ListProject page="projects" />} />
+        <Route exact path="/projects/add" element={<AddProject page="projects" />} />
+        <Route exact path="/projects/edit/:id" element={<EditProject page="projects" />} />
+
         <Route path='/services' element={<ServicesComponent page="services" items={services} />} />
     </Routes> );
 }
