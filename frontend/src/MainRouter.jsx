@@ -13,6 +13,15 @@ import ServicesComponent from './components/Services';
 import ListProject from './components/projects/ListProject';
 import AddProject from './components/projects/AddProject';
 import EditProject from './components/projects/EditProject';
+import ListReference from './components/references/ListReference';
+import AddReference from './components/references/AddReference';
+import EditReference from './components/references/EditReference';
+import ListService from './components/services/ListService';
+import AddService from './components/services/AddService';
+import EditService from './components/services/EditService';
+import ListUser from './components/users/ListUser';
+import AddUser from './components/users/AddUser';
+import EditUser from './components/users/EditUser';
 import proj1 from './assets/proj1.png';
 import proj2 from './assets/proj2.png';
 import proj3 from './assets/proj3.png';
@@ -85,6 +94,18 @@ function MainRouter() {
         <Route exact path="/projects/list" element={<ListProject page="projects" />} />
         <Route exact path="/projects/add" element={<AddProject page="projects" />} />
         <Route exact path="/projects/edit/:id" element={<EditProject page="projects" />} />
+
+        <Route exact path="/references/list" element={<ListReference page="references" />} />
+        <Route exact path="/references/add" element={<AddReference page="references" />} />
+        <Route exact path="/references/edit/:id" element={<EditReference page="references" />} />
+        
+        <Route exact path="/services/list" element={<ListService page="services" />} />
+        <Route exact path="/services/add" element={<AddService page="services" />} />
+        <Route exact path="/services/edit/:id" element={<EditService page="services" />} />
+        
+        <Route exact path="/users/list" element={<ListUser page="users" />} />
+        <Route exact path="/users/add" element={<AddUser page="users" />} />
+        <Route exact path="/users/edit/:id" element={<EditUser page="users" />} />
 
         <Route path='/services' element={<ServicesComponent page="services" items={services} />} />
     </Routes> );

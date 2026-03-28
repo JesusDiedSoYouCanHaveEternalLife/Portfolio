@@ -17,7 +17,10 @@ function Layout({page, children}) {
                 <li><Link className={page === 'home' ? 'active' : ''} to="/">Home</Link></li>
                 <li><Link className={page === 'about' ? 'active' : ''} to="/about">About Me</Link></li>
                 <li><Link className={page === 'projects' ? 'active' : ''} to="/projects/list">Projects</Link></li>
-                <li><Link className={page === 'services' ? 'active' : ''} to="/services">Services</Link></li>
+                <li><Link className={page === 'services' ? 'active' : ''} to="/services/list">Services</Link></li>
+                <li><Link className={page === 'references' ? 'active' : ''} to="/references/list">References</Link></li>
+                <li><Link className={page === 'users' ? 'active' : ''} to="/users/list">Users</Link></li>
+
                 <li><Link className={page === 'contact' ? 'active' : ''} to="/contact">Contact</Link></li>
             </ul>
         </nav>
