@@ -33,6 +33,7 @@ import appdev from './assets/appdev.webp';
 import webdev from './assets/webdev.jpg';
 import softdev from './assets/softdev.jpg';
 import Register from './components/users/Register';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 function MainRouter() {
     //Data list for projects
@@ -94,22 +95,44 @@ function MainRouter() {
         <Route path='/projects' element={<ProjectsComponent page="projects" items={projects} />} />
 
         <Route exact path="/projects/list" element={<ListProject page="projects" />} />
-        <Route exact path="/projects/add" element={<AddProject page="projects" />} />
-        <Route exact path="/projects/edit/:id" element={<EditProject page="projects" />} />
+        <Route exact path="/projects/add" element={
+            <PrivateRoute>
+              <AddProject page="projects" />
+            </PrivateRoute>} />
+        <Route exact path="/projects/edit/:id" element={
+            <PrivateRoute>
+              <EditProject page="projects" />
+            </PrivateRoute>} />
 
         <Route exact path="/references/list" element={<ListReference page="references" />} />
-        <Route exact path="/references/add" element={<AddReference page="references" />} />
-        <Route exact path="/references/edit/:id" element={<EditReference page="references" />} />
+        <Route exact path="/references/add" element={
+            <PrivateRoute>
+              <AddReference page="references" />
+            </PrivateRoute>} />
+        <Route exact path="/references/edit/:id" element={
+            <PrivateRoute>
+              <EditReference page="references" />
+            </PrivateRoute>} />
         
         <Route exact path="/services/list" element={<ListService page="services" />} />
-        <Route exact path="/services/add" element={<AddService page="services" />} />
-        <Route exact path="/services/edit/:id" element={<EditService page="services" />} />
+        <Route exact path="/services/add" element={
+            <PrivateRoute>
+              <AddService page="services" />
+            </PrivateRoute>} />
+        <Route exact path="/services/edit/:id" element={
+            <PrivateRoute>
+              <EditService page="services" />
+            </PrivateRoute>} />
         
         <Route exact path="/users/list" element={<ListUser page="users" />} />
         <Route exact path="/users/add" element={<AddUser page="users" />} />
         <Route exact path="/users/register" element={<Register page="register" />} />
         <Route exact path="/users/signin" element={<Signin page="signin" />} />
-        <Route exact path="/users/edit/:id" element={<EditUser page="users" />} />
+        <Route exact path="/users/edit/:id" element={
+            <PrivateRoute>
+              <EditUser page="users" />
+            </PrivateRoute>
+          } />
 
         <Route path='/services' element={<ServicesComponent page="services" items={services} />} />
     </Routes> );
