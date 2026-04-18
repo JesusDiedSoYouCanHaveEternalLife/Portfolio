@@ -23,7 +23,7 @@ function ListProjectItem({project, onRemove}) {
 
     return (
         <>
-            <tr >
+            <tr key={project.id}>
                 <td className="text-center"> {project.title || ''} </td>
                 <td className="text-center"> {project.completion ? new Date(project.completion).toLocaleDateString() : ''} </td>
                 <td className="text-center"> {project.description || ''} </td>
