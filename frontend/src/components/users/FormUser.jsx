@@ -8,10 +8,10 @@ function FormUser({ user, handleChange, handleSubmit }) {
                 <label htmlFor="firstnameTextField">First Name</label>
                 <input
                     id="firstnameTextField"
-                    name="firstname"
+                    name="firstName"
                     className="form-control"
                     placeholder="Enter the first name"
-                    value={user.firstname || ""}
+                    value={user.firstName || ""}
                     onChange={handleChange}
                     required
                 />
@@ -20,10 +20,22 @@ function FormUser({ user, handleChange, handleSubmit }) {
                 <label htmlFor="lastnameTextField">Last Name</label>
                 <input
                     id="lastnameTextField"
-                    name="lastname"
+                    name="lastName"
                     className="form-control"
                     placeholder="Enter the last name"
-                    value={user.lastname || ""}
+                    value={user.lastName || ""}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="usernameTextField">Username</label>
+                <input
+                    id="usernameTextField"
+                    name="username"
+                    className="form-control"
+                    placeholder="Enter the username"
+                    value={user.username || ""}
                     onChange={handleChange}
                     required
                 />

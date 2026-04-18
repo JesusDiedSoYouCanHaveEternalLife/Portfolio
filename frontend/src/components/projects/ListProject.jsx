@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { list } from '../../datasource/api-projects';
 import ListProjectItem from './ListProjectItem';
 import Layout from "../Layout";
+import { isAuthenticated } from '../auth/auth-helper';
 
 function ListProject({page}) {
     let [projectList, setProjectList] = useState([]);
@@ -39,10 +40,12 @@ function ListProject({page}) {
                 </div>
                 <div className="">
                     <div className="text-end">
-                        <Link to="/projects/add" className="btn btn-primary align-self-end" role="button">
-                            <i className="fas fa-plus-circle"></i>
-                            Add a new Item
-                        </Link>
+                        {isAuthenticated() && (
+                            <Link to="/projects/add" className="btn btn-primary align-self-end" role="button">
+                                <i className="fas fa-plus-circle"></i>
+                                Add a new Item
+                            </Link>
+                        )}
                     </div>
                     <br />
                     <div className="table-responsive" >
@@ -57,7 +60,9 @@ function ListProject({page}) {
                                         <th className="text-center">Title</th>
                                         <th className="text-center">Completion</th>
                                         <th className="text-center">Description</th>
-                                        <th className="text-center" colSpan="3">Actions</th>
+                                        {isAuthenticated() && (
+                                            <th className="text-center" colSpan="3">Actions</th>
+                                        )}
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { list } from '../../datasource/api-services';
 import ListServiceItem from './ListServiceItem';
 import Layout from "../Layout";
+import { isAuthenticated } from "../auth/auth-helper";
+
+
 function ListService({page}) {
     let [serviceList, setServiceList] = useState([]);
     let [isLoading, setIsLoading] = useState(true);
@@ -34,10 +37,12 @@ function ListService({page}) {
                 </div>
                 <div className="">
                     <div className="text-end">
-                        <Link to="/services/add" className="btn btn-primary align-self-end" role="button">
-                            <i className="fas fa-plus-circle"></i>
-                            Add a new Item
-                        </Link>
+                        {isAuthenticated() && (
+                            <Link to="/services/add" className="btn btn-primary align-self-end" role="button">
+                                <i className="fas fa-plus-circle"></i>
+                                Add a new Item
+                            </Link>
+                        )}
                     </div>
                     <br />
                     <div className="table-responsive">
@@ -50,7 +55,9 @@ function ListService({page}) {
                                     <tr>
                                         <th className="text-center">Title</th>
                                         <th className="text-center">Description</th>
-                                        <th className="text-center" colSpan="2">Actions</th>
+                                        {isAuthenticated() && (
+                                            <th className="text-center" colSpan="2">Actions</th>
+                                        )}
                                     </tr>
                                 </thead>
                                 <tbody>

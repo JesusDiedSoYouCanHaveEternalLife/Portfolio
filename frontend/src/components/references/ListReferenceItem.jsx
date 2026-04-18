@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { remove } from "../../datasource/api-references";
+import { isAuthenticated } from "../auth/auth-helper";
+
+
 function ListReferenceItem({reference, onRemove}) {
     const handleRemove = (id) => {
         if (window.confirm('Are you sure you want to delete this item?')) {
@@ -25,18 +28,22 @@ function ListReferenceItem({reference, onRemove}) {
                 <td className="text-center"> {reference.email || ''} </td>
                 <td className="text-center"> {reference.position || ''} </td>
                 <td className="text-center"> {reference.company || ''} </td>
-                <td className="text-center">
-                    <Link className="btn bg-primary btn-primary btn-sm" to={'/references/edit/' + reference.id}>
-                        <i className="fas fa-pencil-alt"></i>
-                    </Link>
-                </td>
-                <td className="text-center">
-                    <button
-                        className="btn bg-danger btn-danger btn-sm"
-                        onClick={() => handleRemove(reference.id)}>
-                        <i className="fas fa-trash-alt"></i>
-                    </button>
-                </td>
+                {isAuthenticated() && (
+                    <td className="text-center">
+                        <Link className="btn bg-primary btn-primary btn-sm" to={'/references/edit/' + reference.id}>
+                            <i className="fas fa-pencil-alt"></i>
+                        </Link>
+                    </td>
+                )}
+                {isAuthenticated() && (
+                    <td className="text-center">
+                        <button
+                            className="btn bg-danger btn-danger btn-sm"
+                            onClick={() => handleRemove(reference.id)}>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                )}
             </tr>
         </>
     )

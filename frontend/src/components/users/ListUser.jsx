@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { list } from '../../datasource/api-users';
 import ListUserItem from './ListUserItem';
 import Layout from "../Layout";
+import { isAuthenticated } from "../auth/auth-helper";
+
 function ListUser({page}) {
     let [userList, setUserList] = useState([]);
     let [isLoading, setIsLoading] = useState(true);
@@ -53,7 +55,9 @@ function ListUser({page}) {
                                         <th className="text-center">Email</th>
                                         <th className="text-center">Created</th>
                                         <th className="text-center">Updated</th>
-                                        <th className="text-center" colSpan="2">Actions</th>
+                                        {isAuthenticated() && (
+                                            <th className="text-center" colSpan="2">Actions</th>
+                                        )}
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -1,5 +1,7 @@
 let apiURL = import.meta.env.VITE_APP_APIURL;
 let endpoint = "/api/users/";
+import { getToken } from "../components/auth/auth-helper";
+
 const list = async () => {
     try {
         let response = await fetch(apiURL + endpoint, {
@@ -35,7 +37,8 @@ const update = async (item, id) => {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + getToken()
             },
             body: JSON.stringify(item)
         });
@@ -50,7 +53,8 @@ const remove = async (id) => {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + getToken()
             }
         })
         return await response.json()
@@ -72,4 +76,20 @@ const getOne = async (id) => {
         console.log(err)
     }
 }
-export { list, remove, create, update, getOne }
+
+const signin = async (user) => {
+    try {
+        let response = await fetch(apiURL + '/api/auth/signin/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        return await response.json()
+    } catch (err) {
+        console.log(err)
+    }
+}
+export { list, remove, create, update, getOne, signin }

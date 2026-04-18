@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { remove } from "../../datasource/api-services";
+import { isAuthenticated } from "../auth/auth-helper";
+
 function ListServiceItem({service, onRemove}) {
     const handleRemove = (id) => {
         if (window.confirm('Are you sure you want to delete this item?')) {
@@ -22,18 +24,22 @@ function ListServiceItem({service, onRemove}) {
             <tr>
                 <td className="text-center"> {service.title || ''} </td>
                 <td className="text-center"> {service.description || ''} </td>
-                <td className="text-center">
-                    <Link className="btn bg-primary btn-primary btn-sm" to={'/services/edit/' + service.id}>
-                        <i className="fas fa-pencil-alt"></i>
-                    </Link>
-                </td>
-                <td className="text-center">
-                    <button
-                        className="btn bg-danger btn-danger btn-sm"
-                        onClick={() => handleRemove(service.id)}>
-                        <i className="fas fa-trash-alt"></i>
-                    </button>
-                </td>
+                {isAuthenticated() && (
+                    <td className="text-center">
+                        <Link className="btn bg-primary btn-primary btn-sm" to={'/services/edit/' + service.id}>
+                            <i className="fas fa-pencil-alt"></i>
+                        </Link>
+                    </td>
+                )}
+                {isAuthenticated() && (
+                    <td className="text-center">
+                        <button
+                            className="btn bg-danger btn-danger btn-sm"
+                            onClick={() => handleRemove(service.id)}>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                )}
             </tr>
         </>
     )

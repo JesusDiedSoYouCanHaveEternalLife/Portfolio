@@ -21,6 +21,7 @@ import AddService from './components/services/AddService';
 import EditService from './components/services/EditService';
 import ListUser from './components/users/ListUser';
 import AddUser from './components/users/AddUser';
+import Signin from './components/users/Signin';
 import EditUser from './components/users/EditUser';
 import proj1 from './assets/proj1.png';
 import proj2 from './assets/proj2.png';
@@ -31,6 +32,7 @@ import proj6 from './assets/proj6.png';
 import appdev from './assets/appdev.webp';
 import webdev from './assets/webdev.jpg';
 import softdev from './assets/softdev.jpg';
+import Register from './components/users/Register';
 
 function MainRouter() {
     //Data list for projects
@@ -105,6 +107,8 @@ function MainRouter() {
         
         <Route exact path="/users/list" element={<ListUser page="users" />} />
         <Route exact path="/users/add" element={<AddUser page="users" />} />
+        <Route exact path="/users/register" element={<Register page="register" />} />
+        <Route exact path="/users/signin" element={<Signin page="signin" />} />
         <Route exact path="/users/edit/:id" element={<EditUser page="users" />} />
 
         <Route path='/services' element={<ServicesComponent page="services" items={services} />} />

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { list } from '../../datasource/api-references';
 import ListReferenceItem from './ListReferenceItem';
 import Layout from "../Layout";
+import { isAuthenticated } from "../auth/auth-helper";
+
 function ListReference({page}) {
     let [referenceList, setReferenceList] = useState([]);
     let [isLoading, setIsLoading] = useState(true);
@@ -34,10 +36,12 @@ function ListReference({page}) {
                 </div>
                 <div className="">
                     <div className="text-end">
-                        <Link to="/references/add" className="btn btn-primary align-self-end" role="button">
-                            <i className="fas fa-plus-circle"></i>
-                            Add a new Item
-                        </Link>
+                        {isAuthenticated() && (
+                            <Link to="/references/add" className="btn btn-primary align-self-end" role="button">
+                                <i className="fas fa-plus-circle"></i>
+                                Add a new Item
+                            </Link>
+                        )}
                     </div>
                     <br />
                     <div className="table-responsive">
@@ -53,7 +57,9 @@ function ListReference({page}) {
                                         <th className="text-center">Email</th>
                                         <th className="text-center">Position</th>
                                         <th className="text-center">Company</th>
-                                        <th className="text-center" colSpan="2">Actions</th>
+                                        {isAuthenticated() && (
+                                            <th className="text-center" colSpan="2">Actions</th>
+                                        )}
                                     </tr>
                                 </thead>
                                 <tbody>
